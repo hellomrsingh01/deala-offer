@@ -6,6 +6,7 @@ import {
   couponDescription,
   couponBenefits,
   couponLovePoints,
+  slugify,
 } from '../data.js'
 import Breadcrumb from '../components/Breadcrumb.jsx'
 import {
@@ -100,7 +101,7 @@ export default function SingleCouponPage() {
         items={[
           { label: 'Deala', to: '/' },
           { label: 'Coupons', to: '/coupons' },
-          { label: coupon.category, to: '/coupons' },
+          { label: coupon.category, to: `/category/${slugify(coupon.category)}` },
           { label: coupon.title },
         ]}
       />
@@ -145,7 +146,7 @@ export default function SingleCouponPage() {
               <ul className={styles.catList}>
                 {categoryCounts.map((cat) => (
                   <li key={cat.name} className={styles.catItem}>
-                    <Link to="/coupons" className={styles.catLink}>{cat.name}</Link>
+                    <Link to={`/category/${slugify(cat.name)}`} className={styles.catLink}>{cat.name}</Link>
                     <span className={styles.catCount}>({cat.count})</span>
                   </li>
                 ))}
@@ -165,7 +166,7 @@ export default function SingleCouponPage() {
 
             <div className={styles.meta}>
               <span>{coupon.date}</span>
-              <Link to="/coupons" className={styles.metaLink}>{coupon.category}</Link>
+              <Link to={`/category/${slugify(coupon.category)}`} className={styles.metaLink}>{coupon.category}</Link>
               <Link to="/coupons" className={styles.metaLink}>{coupon.storeName}</Link>
             </div>
 

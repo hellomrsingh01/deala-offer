@@ -10,7 +10,7 @@ const columns = [
     links: [
       { label: 'Home', to: '/' },
       { label: 'Coupons', to: '/coupons' },
-      { label: 'Categories', to: '/coupons' },
+      { label: 'Categories', to: '/categories' },
       { label: 'All Deals', to: '/coupons' },
     ],
   },

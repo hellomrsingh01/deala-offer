@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { logo, searchCategories } from '../data.js'
+import { logo, searchCategories, categories } from '../data.js'
 import {
   PhoneIcon,
   UserIcon,
   ChevronDown,
+  ArrowRight,
 } from './icons.jsx'
 import styles from './Header.module.css'
 
 const navLinks = [
   { label: 'Home', caret: true, to: '/' },
   { label: 'Coupons', caret: true, to: '/coupons' },
-  { label: 'Categories', caret: true, to: '/coupons' },
+  { label: 'Categories', caret: true, to: '/categories', dropdown: true },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -23,6 +24,7 @@ export default function Header() {
   const isActive = (link) => {
     if (link.to === '/') return pathname === '/'
     if (link.label === 'Coupons') return pathname === '/coupons' || pathname.startsWith('/coupon/')
+    if (link.label === 'Categories') return pathname === '/categories' || pathname.startsWith('/category/')
     if (link.label === 'Contact') return pathname === '/contact'
     return false
   }
@@ -90,6 +92,42 @@ export default function Header() {
         <div className={styles.navLinks}>
           {navLinks.map((link) => {
             const className = `${styles.navLink} ${isActive(link) ? styles.navLinkActive : ''}`
+
+            if (link.dropdown) {
+              return (
+                <div key={link.label} className={styles.navItem}>
+                  <Link to={link.to} className={className}>
+                    {link.label}
+                    <ChevronDown size={12} />
+                  </Link>
+                  <div className={styles.dropdown}>
+                    <div className={styles.dropdownGrid}>
+                      {categories.map((cat) => (
+                        <Link
+                          key={cat.slug}
+                          to={`/category/${cat.slug}`}
+                          className={styles.dropdownItem}
+                        >
+                          <img
+                            referrerPolicy="no-referrer"
+                            src={cat.img}
+                            alt=""
+                            aria-hidden="true"
+                            className={styles.dropdownImg}
+                          />
+                          {cat.name}
+                        </Link>
+                      ))}
+                    </div>
+                    <Link to="/categories" className={styles.dropdownAll}>
+                      View all categories
+                      <ArrowRight size={13} />
+                    </Link>
+                  </div>
+                </div>
+              )
+            }
+
             return link.to ? (
               <Link key={link.label} to={link.to} className={className}>
                 {link.label}

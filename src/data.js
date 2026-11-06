@@ -20,9 +20,9 @@ export const categories = [
   { name: 'Fitness', img: `${BASE}/06/fitness_cat.webp`, bg: '#FCE7F3' },
   { name: 'Finance', img: `${BASE}/06/finance_cat.webp`, bg: '#EDE9FE' },
   { name: 'Fashion', img: `${BASE}/06/fashion_cat.webp`, bg: '#FEE2E2' },
-  { name: 'Entertain', img: `${BASE}/06/entertainment_cat.webp`, bg: '#FEF9C3' },
+  { name: 'Entertainment', img: `${BASE}/06/entertainment_cat.webp`, bg: '#FEF9C3' },
   { name: 'Electronics', img: `${BASE}/06/electronics_cat.webp`, bg: '#DBEAFE' },
-]
+].map((c) => ({ ...c, slug: slugify(c.name) }))
 
 export const countdown = [
   { val: '11', label: 'Day' },
@@ -64,6 +64,17 @@ export const coupons = [
 }))
 
 export const getCouponBySlug = (slug) => coupons.find((c) => c.slug === slug)
+
+export const getCategoryBySlug = (slug) => categories.find((c) => c.slug === slug)
+
+export const getCouponsByCategory = (slug) =>
+  coupons.filter((c) => slugify(c.category) === slug)
+
+// Category list with how many coupons each currently has.
+export const categoriesWithCounts = categories.map((c) => ({
+  ...c,
+  count: coupons.filter((x) => slugify(x.category) === c.slug).length,
+}))
 
 // Home-page views derived from the canonical list.
 export const dealCards = coupons

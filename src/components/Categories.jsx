@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { categories } from '../data.js'
 import styles from './Categories.module.css'
 
@@ -6,7 +7,7 @@ export default function Categories() {
     <section className={styles.section}>
       <div className={styles.row}>
         {categories.map((cat) => (
-          <a key={cat.name} href="#" className={styles.item}>
+          <Link key={cat.slug} to={`/category/${cat.slug}`} className={styles.item}>
             <div className={styles.circle} style={{ background: cat.bg }}>
               <img
                 referrerPolicy="no-referrer"
@@ -16,7 +17,7 @@ export default function Categories() {
               />
             </div>
             <span className={styles.label}>{cat.name}</span>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

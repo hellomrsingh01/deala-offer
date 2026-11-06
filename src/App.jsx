@@ -3,6 +3,8 @@ import Layout from './components/Layout.jsx'
 import Home from './pages/Home.jsx'
 import CouponsPage from './pages/CouponsPage.jsx'
 import SingleCouponPage from './pages/SingleCouponPage.jsx'
+import CategoriesPage from './pages/CategoriesPage.jsx'
+import SingleCategoryPage from './pages/SingleCategoryPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx'
@@ -19,6 +21,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/coupons" element={<CouponsPage />} />
           <Route path="/coupon/:slug" element={<SingleCouponPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/category/:slug" element={<SingleCategoryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
