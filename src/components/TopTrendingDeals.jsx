@@ -73,7 +73,10 @@ function Subscribe() {
         Subscribe
         <SendIcon size={14} />
       </button>
-      <p className={styles.subscribeNote}>Don't worry, we don't spam</p>
+      <p className={styles.subscribeNote}>
+        By subscribing you agree to our{' '}
+        <Link to="/privacy-policy" className={styles.subscribeLink}>Privacy Policy</Link>. No spam.
+      </p>
     </form>
   )
 }

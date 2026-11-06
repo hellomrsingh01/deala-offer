@@ -1,0 +1,58 @@
+.updated {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: var(--pill);
+  margin-bottom: 28px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.block {
+  scroll-margin-top: 160px;
+}
+
+.h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.para {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.para:last-child {
+  margin-bottom: 0;
+}
+
+.list {
+  margin: 0 0 12px;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list li {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 4px;
+}
+
+.list li::marker {
+  color: var(--accent);
+}

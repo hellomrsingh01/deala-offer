@@ -1,0 +1,38 @@
+.section {
+  padding: 40px var(--gutter) 64px;
+  background: #fff;
+}
+
+.inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: 860px;
+}
+
+.head {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.intro {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 14px;
+  max-width: 760px;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 28px;
+  }
+}

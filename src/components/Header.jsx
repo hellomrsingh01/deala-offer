@@ -11,8 +11,8 @@ import styles from './Header.module.css'
 const navLinks = [
   { label: 'Home', caret: true, to: '/' },
   { label: 'Coupons', caret: true, to: '/coupons' },
-  { label: 'Categories', caret: true },
-  { label: 'Contact' },
+  { label: 'Categories', caret: true, to: '/coupons' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 export default function Header() {
@@ -22,7 +22,8 @@ export default function Header() {
 
   const isActive = (link) => {
     if (link.to === '/') return pathname === '/'
-    if (link.to === '/coupons') return pathname.startsWith('/coupon')
+    if (link.label === 'Coupons') return pathname === '/coupons' || pathname.startsWith('/coupon/')
+    if (link.label === 'Contact') return pathname === '/contact'
     return false
   }
 
@@ -103,8 +104,8 @@ export default function Header() {
           })}
         </div>
         <div className={styles.navExtra}>
-          <a href="#" className={styles.submitCoupon}>Submit Coupon</a>
-          <a href="#" className={styles.support}>Support &amp; FAQs</a>
+          <Link to="/contact" className={styles.submitCoupon}>Submit Coupon</Link>
+          <Link to="/contact" className={styles.support}>Support &amp; FAQs</Link>
         </div>
       </nav>
     </header>

@@ -1,15 +1,37 @@
 import { Link } from 'react-router-dom'
 import { logoWhite } from '../data.js'
+import { siteInfo } from '../content/site.js'
 import { FacebookIcon, TwitterIcon, InstagramIcon } from './icons.jsx'
 import styles from './Footer.module.css'
 
-// Footer labels that map to real routes; others stay as placeholders.
-const ROUTES = { Home: '/', Coupons: '/coupons' }
-
 const columns = [
-  { title: 'Quick Links', links: ['Home', 'Coupons', 'Stores', 'Categories', 'Contact'] },
-  { title: 'Top Stores', links: ['Amazon', 'Best Buy', 'AliExpress', 'eBay', 'Costco'] },
-  { title: 'Support', links: ['FAQs', 'Submit Coupon', 'Privacy Policy', 'Terms of Use'] },
+  {
+    title: 'Quick Links',
+    links: [
+      { label: 'Home', to: '/' },
+      { label: 'Coupons', to: '/coupons' },
+      { label: 'Categories', to: '/coupons' },
+      { label: 'All Deals', to: '/coupons' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', to: '/about' },
+      { label: 'Contact Us', to: '/contact' },
+      { label: 'Submit Coupon', to: '/contact' },
+      { label: 'Support & FAQs', to: '/contact' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Privacy Policy', to: '/privacy-policy' },
+      { label: 'Terms & Conditions', to: '/terms' },
+      { label: 'Cookie Policy', to: '/cookie-policy' },
+      { label: 'Affiliate Disclosure', to: '/disclaimer' },
+    ],
+  },
 ]
 
 const socials = [
@@ -18,20 +40,23 @@ const socials = [
   { label: 'Instagram', Icon: InstagramIcon },
 ]
 
+const legalLinks = [
+  { label: 'Privacy Policy', to: '/privacy-policy' },
+  { label: 'Terms', to: '/terms' },
+  { label: 'Cookie Policy', to: '/cookie-policy' },
+  { label: 'Affiliate Disclosure', to: '/disclaimer' },
+]
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brand}>
-          <img
-            referrerPolicy="no-referrer"
-            src={logoWhite}
-            alt="Deala"
-            className={styles.logo}
-          />
-          <p className={styles.about}>
-            Your one-stop destination for the best coupons, cashback deals, and promo codes
-            from top brands.
+          <img referrerPolicy="no-referrer" src={logoWhite} alt={siteInfo.name} className={styles.logo} />
+          <p className={styles.about}>{siteInfo.tagline}</p>
+          <p className={styles.disclosure}>
+            {siteInfo.name} is reader-supported. We may earn a commission from qualifying purchases
+            made through links on our site, at no extra cost to you.
           </p>
           <div className={styles.socials}>
             {socials.map(({ label, Icon }) => (
@@ -46,19 +71,24 @@ export default function Footer() {
           <div key={col.title}>
             <h4 className={styles.colTitle}>{col.title}</h4>
             <div className={styles.colLinks}>
-              {col.links.map((link) =>
-                ROUTES[link] ? (
-                  <Link key={link} to={ROUTES[link]} className={styles.link}>{link}</Link>
-                ) : (
-                  <a key={link} href="#" className={styles.link}>{link}</a>
-                ),
-              )}
+              {col.links.map((link) => (
+                <Link key={link.label} to={link.to} className={styles.link}>{link.label}</Link>
+              ))}
             </div>
           </div>
         ))}
       </div>
 
-      <div className={styles.copyright}>© 2025 Deala. All rights reserved.</div>
+      <div className={styles.bottom}>
+        <div className={styles.copyright}>
+          © {new Date().getFullYear()} {siteInfo.name}. All rights reserved.
+        </div>
+        <div className={styles.legalRow}>
+          {legalLinks.map((link) => (
+            <Link key={link.label} to={link.to} className={styles.legalLink}>{link.label}</Link>
+          ))}
+        </div>
+      </div>
     </footer>
   )
 }

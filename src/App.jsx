@@ -3,6 +3,13 @@ import Layout from './components/Layout.jsx'
 import Home from './pages/Home.jsx'
 import CouponsPage from './pages/CouponsPage.jsx'
 import SingleCouponPage from './pages/SingleCouponPage.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import ContactPage from './pages/ContactPage.jsx'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx'
+import TermsPage from './pages/TermsPage.jsx'
+import CookiePolicyPage from './pages/CookiePolicyPage.jsx'
+import DisclaimerPage from './pages/DisclaimerPage.jsx'
+import NotFoundPage from './pages/NotFoundPage.jsx'
 
 export default function App() {
   return (
@@ -12,6 +19,13 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/coupons" element={<CouponsPage />} />
           <Route path="/coupon/:slug" element={<SingleCouponPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
