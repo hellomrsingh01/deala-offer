@@ -22,7 +22,6 @@ export const categories = [
   { name: 'Fashion', img: `${BASE}/06/fashion_cat.webp`, bg: '#FEE2E2' },
   { name: 'Entertain', img: `${BASE}/06/entertainment_cat.webp`, bg: '#FEF9C3' },
   { name: 'Electronics', img: `${BASE}/06/electronics_cat.webp`, bg: '#DBEAFE' },
-  { name: 'Education', img: `${BASE}/06/education_cat.webp`, bg: '#EDE9FE' },
 ]
 
 export const countdown = [
