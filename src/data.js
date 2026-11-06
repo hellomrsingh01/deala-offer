@@ -52,6 +52,30 @@ export const coupons = [
   { title: '15% Cashback Inside', img: `${BASE}/07/Image-11.jpg`, price: '$310', orig: '', badge: '', store: 'xbox.com', storeName: 'Xbox', category: 'Entertainment', date: '30 Sep, 2025', code: 'OMMF', likes: 9, dislikes: 3, comments: 0, exclusive: false, verified: true },
   { title: '35% Coupon Rush', img: `${BASE}/07/Image-20.jpg`, price: '$180', orig: '', badge: '', store: 'ebay.com', storeName: 'Ebay', category: 'Electronics', date: '30 Sep, 2025', code: 'OMMF', likes: 4, dislikes: 0, comments: 0, exclusive: false, verified: false },
   { title: '10% Save More Today', img: `${BASE}/07/Image.jpg`, price: '$220', orig: '', badge: '', store: 'crocs.com', storeName: 'Crocs', category: 'Shoe', date: '30 Sep, 2025', code: 'TTYU', likes: 0, dislikes: 0, comments: 0, exclusive: false, verified: false },
+  // Travel
+  { title: 'Flat 30% Off Hotels', img: `${BASE}/07/Image-3.jpg`, price: '$120', orig: '$180', badge: '-33%', store: 'expedia.com', storeName: 'Expedia', category: 'Travel', date: '30 Sep, 2025', code: 'TRVL30', likes: 44, dislikes: 2, comments: 0, exclusive: true, verified: true },
+  { title: 'Weekend Getaway Deal', img: `${BASE}/07/Image-5.jpg`, price: '$89', orig: '', badge: '', store: 'booking.com', storeName: 'Booking', category: 'Travel', date: '30 Sep, 2025', code: 'BOOK15', likes: 31, dislikes: 1, comments: 0, exclusive: false, verified: true },
+  // Sports
+  { title: 'Gear Up 25% Off', img: `${BASE}/07/Image-10.jpg`, price: '$75', orig: '$100', badge: '-25%', store: 'nike.com', storeName: 'Nike', category: 'Sports', date: '30 Sep, 2025', code: 'SPRT25', likes: 58, dislikes: 4, comments: 0, exclusive: true, verified: true },
+  { title: 'Team Jersey Offer', img: `${BASE}/07/Image-20.jpg`, price: '$40', orig: '$55', badge: '-27%', store: 'adidas.com', storeName: 'Adidas', category: 'Sports', date: '30 Sep, 2025', code: 'SPORT10', likes: 22, dislikes: 2, comments: 0, exclusive: false, verified: false },
+  // Jwelry
+  { title: 'Diamond Studs 40% Off', img: `${BASE}/07/Image-18.jpg`, price: '$250', orig: '$420', badge: '-40%', store: 'pandora.com', storeName: 'Pandora', category: 'Jwelry', date: '30 Sep, 2025', code: 'GEM40', likes: 67, dislikes: 3, comments: 0, exclusive: true, verified: true },
+  { title: 'Gold Chain Deal', img: `${BASE}/07/Image-22.jpg`, price: '$399', orig: '', badge: '', store: 'tiffany.com', storeName: 'Tiffany', category: 'Jwelry', date: '30 Sep, 2025', code: 'JWL20', likes: 29, dislikes: 1, comments: 0, exclusive: false, verified: true },
+  // Health
+  { title: 'Vitamins BOGO Free', img: `${BASE}/07/Image-6.jpg`, price: '$25', orig: '$50', badge: '-50%', store: 'iherb.com', storeName: 'iHerb', category: 'Health', date: '30 Sep, 2025', code: 'HLTH50', likes: 41, dislikes: 2, comments: 0, exclusive: false, verified: true },
+  { title: 'Wellness Box 30% Off', img: `${BASE}/07/Image-7.jpg`, price: '$60', orig: '$85', badge: '-29%', store: 'cvs.com', storeName: 'CVS', category: 'Health', date: '30 Sep, 2025', code: 'WELL30', likes: 35, dislikes: 3, comments: 0, exclusive: true, verified: false },
+  // Food
+  { title: 'Grocery $20 Off', img: `${BASE}/07/Image-11.jpg`, price: '$80', orig: '$100', badge: '-20%', store: 'instacart.com', storeName: 'Instacart', category: 'Food', date: '30 Sep, 2025', code: 'FOOD20', likes: 52, dislikes: 5, comments: 0, exclusive: false, verified: true },
+  { title: 'Meal Kit Half Price', img: `${BASE}/07/Image-15.jpg`, price: '$45', orig: '$90', badge: '-50%', store: 'hellofresh.com', storeName: 'HelloFresh', category: 'Food', date: '30 Sep, 2025', code: 'MEAL50', likes: 73, dislikes: 4, comments: 0, exclusive: true, verified: true },
+  // Fitness
+  { title: 'Gym Pass 20% Off', img: `${BASE}/07/Image-3.jpg`, price: '$39', orig: '$49', badge: '-20%', store: 'classpass.com', storeName: 'ClassPass', category: 'Fitness', date: '30 Sep, 2025', code: 'FIT20', likes: 28, dislikes: 1, comments: 0, exclusive: false, verified: true },
+  { title: 'Protein Stack Deal', img: `${BASE}/07/Image-5.jpg`, price: '$55', orig: '$70', badge: '-21%', store: 'myprotein.com', storeName: 'MyProtein', category: 'Fitness', date: '30 Sep, 2025', code: 'PRO21', likes: 19, dislikes: 2, comments: 0, exclusive: false, verified: false },
+  // Finance (2nd)
+  { title: 'Premium Plan 3 Months Free', img: `${BASE}/07/Image-10.jpg`, price: '$30', orig: '$90', badge: '-66%', store: 'mint.com', storeName: 'Mint', category: 'Finance', date: '30 Sep, 2025', code: 'FIN66', likes: 15, dislikes: 1, comments: 0, exclusive: true, verified: true },
+  // Entertainment (2nd)
+  { title: 'Stream 2 Months Free', img: `${BASE}/07/Image-20.jpg`, price: '$20', orig: '$30', badge: '-33%', store: 'netflix.com', storeName: 'Netflix', category: 'Entertainment', date: '30 Sep, 2025', code: 'PLAY20', likes: 88, dislikes: 6, comments: 0, exclusive: true, verified: true },
+  // Shoe (2nd)
+  { title: 'Sneaker Drop 35% Off', img: `${BASE}/07/Image-18.jpg`, price: '$89', orig: '$140', badge: '-36%', store: 'nike.com', storeName: 'Nike', category: 'Shoe', date: '30 Sep, 2025', code: 'SHOE35', likes: 61, dislikes: 3, comments: 0, exclusive: true, verified: true },
 ].map((c) => ({
   ...c,
   slug: slugify(c.title),
@@ -77,7 +101,7 @@ export const categoriesWithCounts = categories.map((c) => ({
 }))
 
 // Home-page views derived from the canonical list.
-export const dealCards = coupons
+export const dealCards = coupons.slice(0, 8)
 export const sideDeals = coupons.slice(0, 3)
 
 // Shared editorial copy reused on single-coupon pages (mirrors the demo).
