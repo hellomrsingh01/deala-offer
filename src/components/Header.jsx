@@ -11,9 +11,7 @@ import styles from './Header.module.css'
 const navLinks = [
   { label: 'Home', caret: true, to: '/' },
   { label: 'Coupons', caret: true, to: '/coupons' },
-  { label: 'Stores', caret: true },
   { label: 'Categories', caret: true },
-  { label: 'Pages', caret: true },
   { label: 'Contact' },
 ]
 
