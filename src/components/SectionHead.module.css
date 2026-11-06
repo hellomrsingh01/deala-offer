@@ -1,0 +1,31 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.centeredTitle {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: var(--ink);
+}
