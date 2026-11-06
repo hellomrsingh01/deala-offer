@@ -1,8 +1,14 @@
-// Content for the Deala home page.
+// Content for the Deala site.
 // Extracted from the design mockup's renderVals(); swap for a real
 // data source (API/CMS) when wiring the site up.
 
 const BASE = 'https://softivus.com/wp/deala/wp-content/uploads/2025'
+
+export const slugify = (str) =>
+  str
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
 
 export const categories = [
   { name: 'Travel', img: `${BASE}/06/travel_cat.webp`, bg: '#FEE2E2' },
@@ -26,21 +32,80 @@ export const countdown = [
   { val: '19', label: 'Sec' },
 ]
 
-export const sideDeals = [
-  { img: `${BASE}/07/Image-6.jpg`, title: 'Instant 55% Cashback', price: '$400', orig: '$450', badge: '-11%', code: 'YYTT' },
-  { img: `${BASE}/07/Image-7.jpg`, title: 'Extra 10% Off Now', price: '$150', orig: '$155', badge: '-3%', code: 'TYRY' },
-  { img: `${BASE}/07/Image-18.jpg`, title: 'Todays Cashback Now', price: '$299', orig: '', badge: '', code: 'TYRY' },
+// Store logos keyed by display name (used across coupon + store views).
+const STORE_LOGOS = {
+  'Best Buy': `${BASE}/07/bestbuy.webp`,
+  Amazon: `${BASE}/07/amazon.webp`,
+  Ebay: `${BASE}/07/ebay.webp`,
+  'Ali Express': `${BASE}/07/aliexpress.webp`,
+  Yoox: `${BASE}/07/yoox.webp`,
+  Costco: `${BASE}/07/costco.webp`,
+}
+
+// Canonical coupon list. The home deal grid, the Coupons listing page and
+// the single-coupon page all read from this so links stay consistent.
+export const coupons = [
+  { title: 'Instant 55% Cashback', img: `${BASE}/07/Image-6.jpg`, price: '$400', orig: '$450', badge: '-11%', store: 'bestbuy.com', storeName: 'Best Buy', category: 'Electronics', date: '30 Sep, 2025', code: 'YYTT', likes: 23, dislikes: 3, comments: 0, exclusive: true, verified: true },
+  { title: 'Extra 10% Off Now', img: `${BASE}/07/Image-7.jpg`, price: '$150', orig: '$155', badge: '-3%', store: 'aliexpress.com', storeName: 'Ali Express', category: 'Fashion', date: '30 Sep, 2025', code: 'TYRY', likes: 136, dislikes: 9, comments: 0, exclusive: true, verified: true },
+  { title: 'Todays Cashback Now', img: `${BASE}/07/Image-18.jpg`, price: '$299', orig: '', badge: '', store: 'yoox.com', storeName: 'Yoox', category: 'Fashion', date: '30 Sep, 2025', code: 'TYRY', likes: 17, dislikes: 3, comments: 0, exclusive: false, verified: true },
+  { title: 'Todays Deals On Fire', img: `${BASE}/07/Image-15.jpg`, price: '$299', orig: '', badge: '', store: 'hostinger.com', storeName: 'Hostinger', category: 'Finance', date: '30 Sep, 2025', code: 'TYRY', likes: 12, dislikes: 2, comments: 0, exclusive: false, verified: false },
+  { title: 'Flat 20% OFF Today', img: `${BASE}/07/Image-22.jpg`, price: '$200', orig: '$220', badge: '-9%', store: 'amazon.com', storeName: 'Amazon', category: 'Electronics', date: '30 Sep, 2025', code: 'UUYT', likes: 10, dislikes: 0, comments: 0, exclusive: true, verified: true },
+  { title: '15% Cashback Inside', img: `${BASE}/07/Image-11.jpg`, price: '$310', orig: '', badge: '', store: 'xbox.com', storeName: 'Xbox', category: 'Entertainment', date: '30 Sep, 2025', code: 'OMMF', likes: 9, dislikes: 3, comments: 0, exclusive: false, verified: true },
+  { title: '35% Coupon Rush', img: `${BASE}/07/Image-20.jpg`, price: '$180', orig: '', badge: '', store: 'ebay.com', storeName: 'Ebay', category: 'Electronics', date: '30 Sep, 2025', code: 'OMMF', likes: 4, dislikes: 0, comments: 0, exclusive: false, verified: false },
+  { title: '10% Save More Today', img: `${BASE}/07/Image.jpg`, price: '$220', orig: '', badge: '', store: 'crocs.com', storeName: 'Crocs', category: 'Shoe', date: '30 Sep, 2025', code: 'TTYU', likes: 0, dislikes: 0, comments: 0, exclusive: false, verified: false },
+].map((c) => ({
+  ...c,
+  slug: slugify(c.title),
+  storeLogo: STORE_LOGOS[c.storeName] || null,
+  storeLocation: 'Seattle, United Kingdom',
+  validUntil: '30 Sep, 2025',
+  website: c.store,
+  success: 88,
+  dealsCount: '90911',
+}))
+
+export const getCouponBySlug = (slug) => coupons.find((c) => c.slug === slug)
+
+// Home-page views derived from the canonical list.
+export const dealCards = coupons
+export const sideDeals = coupons.slice(0, 3)
+
+// Shared editorial copy reused on single-coupon pages (mirrors the demo).
+export const couponDescription = [
+  'Transform your space with stunning lighting solutions, now available at an unbeatable price! For a limited time, enjoy 50% off all lighting fixtures by design, offering a perfect blend of style and functionality for every room. Whether you’re upgrading your home, office, or any space that needs a touch of elegance, our curated collection has something for every taste.',
+  'Save on everyday essentials with exclusive offers from trusted partner brands. Stack this coupon with ongoing promotions to maximize your savings, and track every deal from one simple dashboard.',
 ]
 
-export const dealCards = [
-  { img: `${BASE}/07/Image-6.jpg`, title: 'Instant 55% Cashback', price: '$400', orig: '$450', badge: '-11%', store: 'bestbuy.com', date: '30 Sep, 2025', code: 'YYTT', likes: 23, dislikes: 3, comments: 0 },
-  { img: `${BASE}/07/Image-7.jpg`, title: 'Extra 10% Off Now', price: '$150', orig: '$155', badge: '-3%', store: 'aliexpress.com', date: '30 Sep, 2025', code: 'TYRY', likes: 136, dislikes: 9, comments: 0 },
-  { img: `${BASE}/07/Image-18.jpg`, title: 'Todays Cashback Now', price: '$299', orig: '', badge: '', store: 'yoox.com', date: '30 Sep, 2025', code: 'TYRY', likes: 17, dislikes: 3, comments: 0 },
-  { img: `${BASE}/07/Image-15.jpg`, title: 'Todays Deals On Fire', price: '$299', orig: '', badge: '', store: 'hostinger.com', date: '30 Sep, 2025', code: 'TYRY', likes: 12, dislikes: 2, comments: 0 },
-  { img: `${BASE}/07/Image-22.jpg`, title: 'Flat 20% OFF Today', price: '$200', orig: '$220', badge: '-9%', store: 'amazon.com', date: '30 Sep, 2025', code: 'UUYT', likes: 10, dislikes: 0, comments: 0 },
-  { img: `${BASE}/07/Image-11.jpg`, title: '15% Cashback Inside', price: '$310', orig: '', badge: '', store: 'xbox.com', date: '30 Sep, 2025', code: 'OMMF', likes: 9, dislikes: 3, comments: 0 },
-  { img: `${BASE}/07/Image-20.jpg`, title: '35% Coupon Rush', price: '$180', orig: '', badge: '', store: 'ebay.com', date: '30 Sep, 2025', code: 'OMMF', likes: 4, dislikes: 0, comments: 0 },
-  { img: `${BASE}/07/Image.jpg`, title: '10% Save More Today', price: '$220', orig: '', badge: '', store: 'crocs.com', date: '30 Sep, 2025', code: 'TTYU', likes: 0, dislikes: 0, comments: 0 },
+export const couponBenefits = [
+  { title: 'Innovative Designs', text: 'Contemporary, vintage, and modern styles to complement any decor.' },
+  { title: 'Energy-Efficient Options', text: 'Beautiful, eco-friendly lighting with energy-efficient LED options.' },
+  { title: 'High-Quality Craftsmanship', text: 'Premium materials for longevity and superior performance.' },
+  { title: 'Wide Selection', text: 'From chandeliers to wall sconces, a solution for every room.' },
+]
+
+export const couponLovePoints = [
+  'Huge savings on everyday purchases',
+  'Quick cashback process',
+  'Trusted partner brands and stores',
+  'Seamless experience with easy deal tracking',
+]
+
+// "All Categories" sidebar widget on coupon pages.
+export const categoryCounts = [
+  { name: 'Beauty', count: 1 },
+  { name: 'Dining', count: 2 },
+  { name: 'Education', count: 0 },
+  { name: 'Electronics', count: 1 },
+  { name: 'Entertainment', count: 1 },
+  { name: 'Fashion', count: 2 },
+  { name: 'Finance', count: 0 },
+  { name: 'Fitness', count: 1 },
+  { name: 'Food', count: 0 },
+  { name: 'Health', count: 1 },
+  { name: 'Jwelry', count: 0 },
+  { name: 'Shoe', count: 1 },
+  { name: 'Sports', count: 1 },
+  { name: 'Travel', count: 1 },
 ]
 
 export const storeDeals = [

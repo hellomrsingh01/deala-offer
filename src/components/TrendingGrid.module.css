@@ -72,6 +72,10 @@
   color: var(--ink);
 }
 
+.title:hover {
+  color: var(--accent);
+}
+
 .priceRow {
   display: flex;
   align-items: center;

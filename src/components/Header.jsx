@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { logo, searchCategories } from '../data.js'
 import {
   PhoneIcon,
@@ -8,8 +9,8 @@ import {
 import styles from './Header.module.css'
 
 const navLinks = [
-  { label: 'Home', caret: true, active: true },
-  { label: 'Coupons', caret: true },
+  { label: 'Home', caret: true, to: '/' },
+  { label: 'Coupons', caret: true, to: '/coupons' },
   { label: 'Stores', caret: true },
   { label: 'Categories', caret: true },
   { label: 'Pages', caret: true },
@@ -19,6 +20,13 @@ const navLinks = [
 export default function Header() {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState(searchCategories[0])
+  const { pathname } = useLocation()
+
+  const isActive = (link) => {
+    if (link.to === '/') return pathname === '/'
+    if (link.to === '/coupons') return pathname.startsWith('/coupon')
+    return false
+  }
 
   const onSearch = (e) => {
     e.preventDefault()
@@ -29,9 +37,9 @@ export default function Header() {
     <header className={styles.header}>
       {/* Top bar */}
       <div className={styles.topBar}>
-        <a href="#" className={styles.logoLink}>
+        <Link to="/" className={styles.logoLink}>
           <img referrerPolicy="no-referrer" src={logo} alt="Deala" className={styles.logo} />
-        </a>
+        </Link>
 
         <form className={styles.search} onSubmit={onSearch}>
           <select
@@ -81,16 +89,20 @@ export default function Header() {
       {/* Nav */}
       <nav className={styles.nav}>
         <div className={styles.navLinks}>
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href="#"
-              className={`${styles.navLink} ${link.active ? styles.navLinkActive : ''}`}
-            >
-              {link.label}
-              {link.caret && <ChevronDown size={12} />}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const className = `${styles.navLink} ${isActive(link) ? styles.navLinkActive : ''}`
+            return link.to ? (
+              <Link key={link.label} to={link.to} className={className}>
+                {link.label}
+                {link.caret && <ChevronDown size={12} />}
+              </Link>
+            ) : (
+              <a key={link.label} href="#" className={className}>
+                {link.label}
+                {link.caret && <ChevronDown size={12} />}
+              </a>
+            )
+          })}
         </div>
         <div className={styles.navExtra}>
           <a href="#" className={styles.submitCoupon}>Submit Coupon</a>

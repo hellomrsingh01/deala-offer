@@ -1,6 +1,10 @@
+import { Link } from 'react-router-dom'
 import { logoWhite } from '../data.js'
 import { FacebookIcon, TwitterIcon, InstagramIcon } from './icons.jsx'
 import styles from './Footer.module.css'
+
+// Footer labels that map to real routes; others stay as placeholders.
+const ROUTES = { Home: '/', Coupons: '/coupons' }
 
 const columns = [
   { title: 'Quick Links', links: ['Home', 'Coupons', 'Stores', 'Categories', 'Contact'] },
@@ -42,9 +46,13 @@ export default function Footer() {
           <div key={col.title}>
             <h4 className={styles.colTitle}>{col.title}</h4>
             <div className={styles.colLinks}>
-              {col.links.map((link) => (
-                <a key={link} href="#" className={styles.link}>{link}</a>
-              ))}
+              {col.links.map((link) =>
+                ROUTES[link] ? (
+                  <Link key={link} to={ROUTES[link]} className={styles.link}>{link}</Link>
+                ) : (
+                  <a key={link} href="#" className={styles.link}>{link}</a>
+                ),
+              )}
             </div>
           </div>
         ))}

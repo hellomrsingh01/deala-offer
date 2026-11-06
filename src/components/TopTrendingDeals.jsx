@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { countdown, sideDeals, flashDealArt } from '../data.js'
 import { ArrowRight, MailIcon, SendIcon, ShareIcon } from './icons.jsx'
 import SectionHead from './SectionHead.jsx'
@@ -78,18 +79,19 @@ function Subscribe() {
 }
 
 function SideDeal({ deal }) {
+  const to = `/coupon/${deal.slug}`
   return (
     <div className={styles.deal}>
-      <div className={styles.dealImgWrap}>
+      <Link to={to} className={styles.dealImgWrap}>
         <img
           referrerPolicy="no-referrer"
           src={deal.img}
           alt={deal.title}
           className={styles.dealImg}
         />
-      </div>
+      </Link>
       <div className={styles.dealBody}>
-        <h4 className={styles.dealTitle}>{deal.title}</h4>
+        <Link to={to} className={styles.dealTitle}>{deal.title}</Link>
         <div className={styles.priceRow}>
           <span className={styles.price}>{deal.price}</span>
           {deal.orig && <span className={styles.orig}>{deal.orig}</span>}
@@ -98,10 +100,10 @@ function SideDeal({ deal }) {
         <p className={styles.dealBlurb}>{SIDE_DEAL_BLURB}</p>
       </div>
       <div className={styles.dealAside}>
-        <a href="#" className={styles.reveal}>
+        <Link to={to} className={styles.reveal}>
           Reveal Coupon
           <span className={styles.revealCode}>{deal.code}</span>
-        </a>
+        </Link>
         <span className={styles.share}>
           <ShareIcon size={12} />
           Share &amp; Earn

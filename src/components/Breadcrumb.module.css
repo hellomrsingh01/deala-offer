@@ -1,0 +1,42 @@
+.bar {
+  background: var(--accent-wash);
+  padding: 16px var(--gutter);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+a.link:hover {
+  color: var(--accent);
+}
+
+.current {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.sep {
+  color: var(--muted-soft);
+  font-size: 12px;
+}

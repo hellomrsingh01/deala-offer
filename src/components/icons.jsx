@@ -158,3 +158,65 @@ export const InstagramIcon = (p) => (
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
   </Stroke>
 )
+
+export const CheckIcon = (p) => (
+  <Stroke width={2.5} {...p}>
+    <polyline points="20 6 9 17 4 12" />
+  </Stroke>
+)
+
+export const GlobeIcon = (p) => (
+  <Stroke {...p}>
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+  </Stroke>
+)
+
+export const MapPinIcon = (p) => (
+  <Stroke {...p}>
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+    <circle cx="12" cy="10" r="3" />
+  </Stroke>
+)
+
+export const LinkIcon = (p) => (
+  <Stroke {...p}>
+    <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+    <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+  </Stroke>
+)
+
+export const TagIcon = (p) => (
+  <Stroke {...p}>
+    <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" />
+    <line x1="7" y1="7" x2="7.01" y2="7" />
+  </Stroke>
+)
+
+export const GridIcon = (p) => (
+  <Stroke {...p}>
+    <rect x="3" y="3" width="7" height="7" />
+    <rect x="14" y="3" width="7" height="7" />
+    <rect x="14" y="14" width="7" height="7" />
+    <rect x="3" y="14" width="7" height="7" />
+  </Stroke>
+)
+
+export const ListIcon = (p) => (
+  <Stroke {...p}>
+    <line x1="8" y1="6" x2="21" y2="6" />
+    <line x1="8" y1="12" x2="21" y2="12" />
+    <line x1="8" y1="18" x2="21" y2="18" />
+    <line x1="3" y1="6" x2="3.01" y2="6" />
+    <line x1="3" y1="12" x2="3.01" y2="12" />
+    <line x1="3" y1="18" x2="3.01" y2="18" />
+  </Stroke>
+)
+
+export const SearchIcon = (p) => (
+  <Stroke {...p}>
+    <circle cx="11" cy="11" r="8" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </Stroke>
+)

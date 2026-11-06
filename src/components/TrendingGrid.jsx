@@ -1,13 +1,15 @@
+import { Link } from 'react-router-dom'
 import { dealCards } from '../data.js'
 import { HeartIcon, ThumbsUp, ThumbsDown, CommentIcon } from './icons.jsx'
 import SectionHead from './SectionHead.jsx'
 import styles from './TrendingGrid.module.css'
 
 function DealCard({ card }) {
+  const to = `/coupon/${card.slug}`
   return (
     <div className={styles.card}>
-      <div className={styles.media}>
-        <span className={styles.exclusive}>Exclusive</span>
+      <Link to={to} className={styles.media}>
+        {card.exclusive && <span className={styles.exclusive}>Exclusive</span>}
         <button type="button" aria-label="Save deal" className={styles.save}>
           <HeartIcon size={18} />
         </button>
@@ -17,10 +19,10 @@ function DealCard({ card }) {
           alt={card.title}
           className={styles.mediaImg}
         />
-      </div>
+      </Link>
 
       <div className={styles.body}>
-        <h4 className={styles.title}>{card.title}</h4>
+        <Link to={to} className={styles.title}>{card.title}</Link>
         <div className={styles.priceRow}>
           <span className={styles.price}>{card.price}</span>
           {card.orig && <span className={styles.orig}>{card.orig}</span>}
@@ -33,10 +35,10 @@ function DealCard({ card }) {
       </div>
 
       <div className={styles.couponRow}>
-        <a href="#" className={styles.reveal}>
+        <Link to={to} className={styles.reveal}>
           Reveal Coupon
           <span className={styles.code}>{card.code}</span>
-        </a>
+        </Link>
       </div>
 
       <div className={styles.stats}>
