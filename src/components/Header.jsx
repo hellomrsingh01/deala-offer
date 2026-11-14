@@ -7,6 +7,7 @@ import {
   ChevronDown,
   ArrowRight,
 } from './icons.jsx'
+import CategoryIcon from './CategoryIcon.jsx'
 import styles from './Header.module.css'
 
 const navLinks = [
@@ -108,12 +109,10 @@ export default function Header() {
                           to={`/category/${cat.slug}`}
                           className={styles.dropdownItem}
                         >
-                          <img
-                            referrerPolicy="no-referrer"
-                            src={cat.img}
-                            alt=""
-                            aria-hidden="true"
-                            className={styles.dropdownImg}
+                          <CategoryIcon
+                            category={cat}
+                            imgClass={styles.dropdownImg}
+                            emojiClass={styles.dropdownEmoji}
                           />
                           {cat.name}
                         </Link>

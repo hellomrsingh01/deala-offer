@@ -210,6 +210,14 @@
   flex-shrink: 0;
 }
 
+.dropdownEmoji {
+  width: 26px;
+  font-size: 19px;
+  line-height: 1;
+  text-align: center;
+  flex-shrink: 0;
+}
+
 .dropdownAll {
   display: flex;
   align-items: center;

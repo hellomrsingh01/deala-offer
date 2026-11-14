@@ -22,6 +22,13 @@ export const categories = [
   { name: 'Fashion', img: `${BASE}/06/fashion_cat.webp`, bg: '#FEE2E2' },
   { name: 'Entertainment', img: `${BASE}/06/entertainment_cat.webp`, bg: '#FEF9C3' },
   { name: 'Electronics', img: `${BASE}/06/electronics_cat.webp`, bg: '#DBEAFE' },
+  // Travel verticals (Booking.com offer) — emoji icons, no CDN image available
+  { name: 'Hotels', emoji: '🏨', bg: '#DBEAFE' },
+  { name: 'Flights', emoji: '✈️', bg: '#CFFAFE' },
+  { name: 'Car Rentals', emoji: '🚗', bg: '#FEF3C7' },
+  { name: 'Attractions', emoji: '🎡', bg: '#FCE7F3' },
+  { name: 'Airport Taxis', emoji: '🚕', bg: '#FEF9C3' },
+  { name: 'Vacation Rentals', emoji: '🏖️', bg: '#D1FAE5' },
 ].map((c) => ({ ...c, slug: slugify(c.name) }))
 
 export const countdown = [
@@ -76,6 +83,24 @@ export const coupons = [
   { title: 'Stream 2 Months Free', img: `${BASE}/07/Image-20.jpg`, price: '$20', orig: '$30', badge: '-33%', store: 'netflix.com', storeName: 'Netflix', category: 'Entertainment', date: '30 Sep, 2025', code: 'PLAY20', likes: 88, dislikes: 6, comments: 0, exclusive: true, verified: true },
   // Shoe (2nd)
   { title: 'Sneaker Drop 35% Off', img: `${BASE}/07/Image-18.jpg`, price: '$89', orig: '$140', badge: '-36%', store: 'nike.com', storeName: 'Nike', category: 'Shoe', date: '30 Sep, 2025', code: 'SHOE35', likes: 61, dislikes: 3, comments: 0, exclusive: true, verified: true },
+  // Hotels
+  { title: 'Hotels Up to 30% Off', img: `${BASE}/07/Image-3.jpg`, price: '$89', orig: '$129', badge: '-31%', store: 'booking.com', storeName: 'Booking.com', category: 'Hotels', date: '30 Sep, 2025', code: 'STAY30', likes: 120, dislikes: 4, comments: 0, exclusive: true, verified: true },
+  { title: 'Genius Member Deal 15%', img: `${BASE}/07/Image-5.jpg`, price: '$65', orig: '$78', badge: '-15%', store: 'hotels.com', storeName: 'Hotels.com', category: 'Hotels', date: '30 Sep, 2025', code: 'HOTEL15', likes: 54, dislikes: 2, comments: 0, exclusive: false, verified: true },
+  // Flights
+  { title: 'Flights Save $40', img: `${BASE}/07/Image-10.jpg`, price: '$210', orig: '$250', badge: '-16%', store: 'booking.com', storeName: 'Booking.com', category: 'Flights', date: '30 Sep, 2025', code: 'FLY40', likes: 77, dislikes: 5, comments: 0, exclusive: true, verified: true },
+  { title: 'Return Fare 20% Off', img: `${BASE}/07/Image-6.jpg`, price: '$320', orig: '$400', badge: '-20%', store: 'expedia.com', storeName: 'Expedia', category: 'Flights', date: '30 Sep, 2025', code: 'AIR20', likes: 41, dislikes: 3, comments: 0, exclusive: false, verified: true },
+  // Car Rentals
+  { title: 'Car Hire 25% Off', img: `${BASE}/07/Image-7.jpg`, price: '$30', orig: '$40', badge: '-25%', store: 'booking.com', storeName: 'Booking.com', category: 'Car Rentals', date: '30 Sep, 2025', code: 'DRIVE25', likes: 48, dislikes: 2, comments: 0, exclusive: true, verified: true },
+  { title: 'Weekly Rental Deal', img: `${BASE}/07/Image-11.jpg`, price: '$180', orig: '$220', badge: '-18%', store: 'hertz.com', storeName: 'Hertz', category: 'Car Rentals', date: '30 Sep, 2025', code: 'CAR18', likes: 22, dislikes: 1, comments: 0, exclusive: false, verified: false },
+  // Attractions
+  { title: 'Attractions 20% Off', img: `${BASE}/07/Image-15.jpg`, price: '$25', orig: '$32', badge: '-22%', store: 'booking.com', storeName: 'Booking.com', category: 'Attractions', date: '30 Sep, 2025', code: 'SEE20', likes: 63, dislikes: 2, comments: 0, exclusive: true, verified: true },
+  { title: 'City Pass Bundle', img: `${BASE}/07/Image-18.jpg`, price: '$49', orig: '$69', badge: '-29%', store: 'getyourguide.com', storeName: 'GetYourGuide', category: 'Attractions', date: '30 Sep, 2025', code: 'TOUR29', likes: 35, dislikes: 3, comments: 0, exclusive: false, verified: true },
+  // Airport Taxis
+  { title: 'Airport Transfer 15% Off', img: `${BASE}/07/Image-20.jpg`, price: '$28', orig: '$33', badge: '-15%', store: 'booking.com', storeName: 'Booking.com', category: 'Airport Taxis', date: '30 Sep, 2025', code: 'RIDE15', likes: 29, dislikes: 1, comments: 0, exclusive: true, verified: true },
+  { title: 'Private Pickup Deal', img: `${BASE}/07/Image-22.jpg`, price: '$39', orig: '', badge: '', store: 'welcomepickups.com', storeName: 'Welcome Pickups', category: 'Airport Taxis', date: '30 Sep, 2025', code: 'TAXI10', likes: 14, dislikes: 0, comments: 0, exclusive: false, verified: false },
+  // Vacation Rentals
+  { title: 'Vacation Homes 30% Off', img: `${BASE}/07/Image.jpg`, price: '$140', orig: '$200', badge: '-30%', store: 'booking.com', storeName: 'Booking.com', category: 'Vacation Rentals', date: '30 Sep, 2025', code: 'HOME30', likes: 88, dislikes: 4, comments: 0, exclusive: true, verified: true },
+  { title: 'Beachfront Villa Deal', img: `${BASE}/07/Image-3.jpg`, price: '$250', orig: '$330', badge: '-24%', store: 'vrbo.com', storeName: 'Vrbo', category: 'Vacation Rentals', date: '30 Sep, 2025', code: 'VILLA24', likes: 51, dislikes: 2, comments: 0, exclusive: false, verified: true },
 ].map((c) => ({
   ...c,
   slug: slugify(c.title),

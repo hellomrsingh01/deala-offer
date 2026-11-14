@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { getCategoryBySlug, getCouponsByCategory, coupons } from '../data.js'
 import PageShell from '../components/PageShell.jsx'
 import CouponCard from '../components/CouponCard.jsx'
+import CategoryIcon from '../components/CategoryIcon.jsx'
 import { ArrowRight } from '../components/icons.jsx'
 import styles from './SingleCategoryPage.module.css'
 
@@ -39,7 +40,7 @@ export default function SingleCategoryPage() {
       intro={`Discover the latest ${category.name.toLowerCase()} coupons, promo codes, and cashback offers from trusted brands, updated regularly.`}
     >
       <div className={styles.banner} style={{ background: category.bg }}>
-        <img referrerPolicy="no-referrer" src={category.img} alt={category.name} className={styles.bannerIcon} />
+        <CategoryIcon category={category} imgClass={styles.bannerIcon} emojiClass={styles.bannerEmoji} />
         <div>
           <div className={styles.bannerName}>{category.name}</div>
           <div className={styles.bannerCount}>

@@ -40,6 +40,11 @@
   object-fit: contain;
 }
 
+.iconEmoji {
+  font-size: 46px;
+  line-height: 1;
+}
+
 .label {
   font-size: 13px;
   font-weight: 600;
