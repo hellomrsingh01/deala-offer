@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ShareIcon } from './icons.jsx'
+import { openDeal } from '../affiliate.js'
 import styles from './CouponCard.module.css'
 
 const CARD_BLURB =
@@ -19,6 +20,8 @@ export default function CouponCard({ coupon }) {
     } catch {
       /* clipboard unavailable */
     }
+    // Copying the code opens the merchant in a new tab (affiliate link).
+    openDeal(coupon)
   }
 
   return (

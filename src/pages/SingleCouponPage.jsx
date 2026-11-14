@@ -8,6 +8,7 @@ import {
   couponLovePoints,
   slugify,
 } from '../data.js'
+import { dealOutboundUrl, OUTBOUND_REL, openDeal } from '../affiliate.js'
 import Breadcrumb from '../components/Breadcrumb.jsx'
 import {
   CheckIcon,
@@ -30,13 +31,15 @@ function StoreAvatar({ coupon, className }) {
   return <div className={`${className} ${styles.storeInitial}`}>{coupon.storeName.charAt(0)}</div>
 }
 
-function CodeBox({ code }) {
+function CodeBox({ code, coupon }) {
   const [revealed, setRevealed] = useState(false)
   const [copied, setCopied] = useState(false)
 
   const onClick = () => {
     if (!revealed) {
       setRevealed(true)
+      // Revealing the code sends the shopper to the merchant (affiliate link).
+      openDeal(coupon)
     } else {
       setCopied(true)
     }
@@ -57,7 +60,7 @@ function CodeBox({ code }) {
   )
 }
 
-function SidebarGetCode({ code }) {
+function SidebarGetCode({ code, coupon }) {
   const [copied, setCopied] = useState(false)
   const onClick = () => {
     setCopied(true)
@@ -66,6 +69,8 @@ function SidebarGetCode({ code }) {
     } catch {
       /* clipboard unavailable */
     }
+    // Copying the code opens the merchant in a new tab (affiliate link).
+    openDeal(coupon)
   }
   return (
     <button type="button" className={styles.getCode} onClick={onClick}>
@@ -138,7 +143,7 @@ export default function SingleCouponPage() {
                 </div>
               </div>
 
-              <SidebarGetCode code={coupon.code} />
+              <SidebarGetCode code={coupon.code} coupon={coupon} />
             </div>
 
             <div className={styles.panel}>
@@ -175,7 +180,7 @@ export default function SingleCouponPage() {
             <div className={styles.infoGrid}>
               <div className={styles.infoBox}>
                 <div className={styles.infoLabel}>Coupon Code</div>
-                <CodeBox code={coupon.code} />
+                <CodeBox code={coupon.code} coupon={coupon} />
               </div>
 
               <div className={styles.infoBox}>
@@ -190,7 +195,7 @@ export default function SingleCouponPage() {
 
               <div className={styles.infoBox}>
                 <div className={styles.infoLabel}>Coupon Website</div>
-                <a href="#" className={styles.visit}>Visit Website</a>
+                <a href={dealOutboundUrl(coupon)} target="_blank" rel={OUTBOUND_REL} className={styles.visit}>Visit Website</a>
               </div>
             </div>
 
