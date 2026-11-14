@@ -1,4 +1,5 @@
 import { shoppingCards } from '../data.js'
+import { OUTBOUND_REL } from '../affiliate.js'
 import { ClockIcon, ShieldIcon } from './icons.jsx'
 import SectionHead from './SectionHead.jsx'
 import styles from './BestCards.module.css'
@@ -23,7 +24,7 @@ function Card({ card }) {
             <ClockIcon size={10} />
             End in : {card.end}
           </span>
-          <a href="#" className={styles.apply}>Apply Now</a>
+          <a href={card.site} target="_blank" rel={OUTBOUND_REL} className={styles.apply}>Apply Now</a>
         </div>
       </div>
 

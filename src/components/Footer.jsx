@@ -35,9 +35,9 @@ const columns = [
 ]
 
 const socials = [
-  { label: 'Facebook', Icon: FacebookIcon },
-  { label: 'Twitter', Icon: TwitterIcon },
-  { label: 'Instagram', Icon: InstagramIcon },
+  { label: 'Facebook', Icon: FacebookIcon, href: 'https://www.facebook.com/' },
+  { label: 'Twitter', Icon: TwitterIcon, href: 'https://x.com/' },
+  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/' },
 ]
 
 const legalLinks = [
@@ -59,8 +59,8 @@ export default function Footer() {
             made through links on our site, at no extra cost to you.
           </p>
           <div className={styles.socials}>
-            {socials.map(({ label, Icon }) => (
-              <a key={label} href="#" aria-label={label} className={styles.social}>
+            {socials.map(({ label, Icon, href }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles.social}>
                 <Icon size={14} />
               </a>
             ))}

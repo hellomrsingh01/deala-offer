@@ -31,10 +31,10 @@ function FlashDeal() {
           ))}
         </div>
       </div>
-      <a href="#" className={styles.flashCta}>
+      <Link to="/coupons" className={styles.flashCta}>
         Reveal coupon
         <ArrowRight size={14} />
-      </a>
+      </Link>
       <img
         referrerPolicy="no-referrer"
         src={flashDealArt}
@@ -129,10 +129,10 @@ export default function TopTrendingDeals() {
           {sideDeals.map((deal) => (
             <SideDeal key={deal.title} deal={deal} />
           ))}
-          <a href="#" className={styles.seeAll}>
+          <Link to="/coupons" className={styles.seeAll}>
             See All Deals
             <ArrowRight size={14} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

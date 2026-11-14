@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { storeDeals, featuredBanner } from '../data.js'
+import { OUTBOUND_REL } from '../affiliate.js'
 import { ArrowRight, BoltIcon } from './icons.jsx'
 import SectionHead from './SectionHead.jsx'
 import styles from './PopularDeals.module.css'
@@ -30,8 +32,8 @@ function StoreRow({ store }) {
           </span>
           <span className={styles.offChip}>🏷 55% OFF</span>
         </div>
-        <a href="#" className={styles.revealShop}>Reveal Shop</a>
-        <a href="#" className={styles.viewDetails}>View Details</a>
+        <a href={store.site} target="_blank" rel={OUTBOUND_REL} className={styles.revealShop}>Reveal Shop</a>
+        <a href={store.site} target="_blank" rel={OUTBOUND_REL} className={styles.viewDetails}>View Details</a>
       </div>
     </div>
   )
@@ -46,10 +48,10 @@ export default function PopularDeals() {
           {storeDeals.map((store, i) => (
             <StoreRow key={`${store.deal}-${i}`} store={store} />
           ))}
-          <a href="#" className={styles.seeAll}>
+          <Link to="/coupons" className={styles.seeAll}>
             See All Stores
             <ArrowRight size={14} />
-          </a>
+          </Link>
         </div>
         <div className={styles.banner}>
           <img

@@ -171,19 +171,19 @@ export const categoryCounts = [
 ]
 
 export const storeDeals = [
-  { logo: `${BASE}/07/aliex.webp`, name: 'Ali Express', url: 'demo.com', deal: 'Get 30% Off Today!', deals: '574', avail: '125' },
-  { logo: `${BASE}/07/Image31.png`, name: 'Ali Express', url: 'demo.com', deal: 'Instant 15% Off', deals: '574', avail: '125' },
-  { logo: `${BASE}/07/Image24.png`, name: 'Ali Express', url: 'demo.com', deal: 'Save 20% Today', deals: '574', avail: '125' },
-  { logo: `${BASE}/07/image36.png`, name: 'Ali Express', url: 'demo.com', deal: '9% Cashback Now', deals: '574', avail: '125' },
+  { logo: `${BASE}/07/aliexpress.webp`, name: 'Ali Express', url: 'aliexpress.com', site: 'https://www.aliexpress.com/', deal: 'Get 30% Off Today!', deals: '574', avail: '125' },
+  { logo: `${BASE}/07/amazon.webp`, name: 'Amazon', url: 'amazon.com', site: 'https://www.amazon.com/', deal: 'Instant 15% Off', deals: '438', avail: '96' },
+  { logo: `${BASE}/07/ebay.webp`, name: 'Ebay', url: 'ebay.com', site: 'https://www.ebay.com/', deal: 'Save 20% Today', deals: '512', avail: '110' },
+  { logo: `${BASE}/07/bestbuy.webp`, name: 'Best Buy', url: 'bestbuy.com', site: 'https://www.bestbuy.com/', deal: '9% Cashback Now', deals: '389', avail: '74' },
 ]
 
 export const shoppingCards = [
-  { logo: `${BASE}/07/amazon.webp`, name: 'Amazon', end: '20:25:45', cardImg: `${BASE}/07/card_image1.webp` },
-  { logo: `${BASE}/07/bestbuy.webp`, name: 'Best Buy', end: '20:25:45', cardImg: `${BASE}/07/card_image_2.webp` },
-  { logo: `${BASE}/07/costco.webp`, name: 'Costco', end: '20:25:45', cardImg: `${BASE}/07/card_image_3.webp` },
-  { logo: `${BASE}/07/yoox.webp`, name: 'Yoox', end: '20:25:45', cardImg: `${BASE}/07/card_image1.webp` },
-  { logo: `${BASE}/07/ebay.webp`, name: 'Ebay', end: '20:25:45', cardImg: `${BASE}/07/card_image_2.webp` },
-  { logo: `${BASE}/07/aliexpress.webp`, name: 'Ali Express', end: '20:25:45', cardImg: `${BASE}/07/card_image_3.webp` },
+  { logo: `${BASE}/07/amazon.webp`, name: 'Amazon', end: '20:25:45', cardImg: `${BASE}/07/card_image1.webp`, site: 'https://www.amazon.com/' },
+  { logo: `${BASE}/07/bestbuy.webp`, name: 'Best Buy', end: '20:25:45', cardImg: `${BASE}/07/card_image_2.webp`, site: 'https://www.bestbuy.com/' },
+  { logo: `${BASE}/07/costco.webp`, name: 'Costco', end: '20:25:45', cardImg: `${BASE}/07/card_image_3.webp`, site: 'https://www.costco.com/' },
+  { logo: `${BASE}/07/yoox.webp`, name: 'Yoox', end: '20:25:45', cardImg: `${BASE}/07/card_image1.webp`, site: 'https://www.yoox.com/' },
+  { logo: `${BASE}/07/ebay.webp`, name: 'Ebay', end: '20:25:45', cardImg: `${BASE}/07/card_image_2.webp`, site: 'https://www.ebay.com/' },
+  { logo: `${BASE}/07/aliexpress.webp`, name: 'Ali Express', end: '20:25:45', cardImg: `${BASE}/07/card_image_3.webp`, site: 'https://www.aliexpress.com/' },
 ]
 
 export const tickerItems = [

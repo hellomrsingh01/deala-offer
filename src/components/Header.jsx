@@ -76,14 +76,14 @@ export default function Header() {
           </div>
 
           <div className={styles.auth}>
-            <a href="#" className={styles.authLink}>
+            <Link to="/contact" className={styles.authLink}>
               <UserIcon size={15} />
               Login
-            </a>
-            <a href="#" className={styles.authLink}>
+            </Link>
+            <Link to="/contact" className={styles.authLink}>
               <UserIcon size={15} />
               Register
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -133,10 +133,10 @@ export default function Header() {
                 {link.caret && <ChevronDown size={12} />}
               </Link>
             ) : (
-              <a key={link.label} href="#" className={className}>
+              <span key={link.label} className={className}>
                 {link.label}
                 {link.caret && <ChevronDown size={12} />}
-              </a>
+              </span>
             )
           })}
         </div>
