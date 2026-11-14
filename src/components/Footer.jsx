@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { logoWhite } from '../data.js'
 import { siteInfo } from '../content/site.js'
-import { FacebookIcon, TwitterIcon, InstagramIcon } from './icons.jsx'
 import styles from './Footer.module.css'
 
 const columns = [
@@ -34,12 +33,6 @@ const columns = [
   },
 ]
 
-const socials = [
-  { label: 'Facebook', Icon: FacebookIcon, href: 'https://www.facebook.com/' },
-  { label: 'Twitter', Icon: TwitterIcon, href: 'https://x.com/' },
-  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/' },
-]
-
 const legalLinks = [
   { label: 'Privacy Policy', to: '/privacy-policy' },
   { label: 'Terms', to: '/terms' },
@@ -58,13 +51,6 @@ export default function Footer() {
             {siteInfo.name} is reader-supported. We may earn a commission from qualifying purchases
             made through links on our site, at no extra cost to you.
           </p>
-          <div className={styles.socials}>
-            {socials.map(({ label, Icon, href }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles.social}>
-                <Icon size={14} />
-              </a>
-            ))}
-          </div>
         </div>
 
         {columns.map((col) => (
