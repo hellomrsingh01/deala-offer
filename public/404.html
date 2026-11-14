@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Deala</title>
+    <script>
+      // GitHub Pages SPA fallback for the hash router.
+      // A direct hit to /deala-offer/<path> (no #) lands here; redirect it
+      // into the app as /deala-offer/#/<path> so every URL resolves.
+      (function () {
+        var base = '/deala-offer/'
+        var loc = window.location
+        var rest = loc.pathname.indexOf(base) === 0 ? loc.pathname.slice(base.length) : ''
+        loc.replace(base + '#/' + rest.replace(/\/$/, '') + loc.search)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
